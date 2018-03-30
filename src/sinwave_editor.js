@@ -27,13 +27,19 @@ export default class SinwaveEditor {
         this.points = sinData.sin;
         return this.points;
     }
-    draw() {
+    draw(buffer) {
+        const b = buffer || 0;
+
         this.gfx = this.game.add.graphics(0, 0);
         this.gfx.moveTo(this.points[0], 0);
         this.gfx.lineStyle(2, 0x0066ff);
 
         for (let i = 0; i < this.points.length; i++) {
-            this.gfx.lineTo(this.points[i] + this.xOffset, i);
+            let j = i + b;
+            if (j > this.points.length) {
+                j = Math.abs(j - this.points.length);
+            }
+            this.gfx.lineTo(this.points[j] + this.xOffset, i);
         }
     }
     changeSinAmp(amount) {

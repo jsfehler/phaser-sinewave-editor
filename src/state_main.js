@@ -12,7 +12,16 @@ export default class Main extends Phaser.State {
 
         this.game.load.image('debugBG', 'debug_bg.png');
     }
+    update() {
+        this.sinwaveEditor.gfx.destroy();
+        this.sinwaveEditor.draw(this.m);
+        this.m = uiWidgets.utils.modulo(this.m, this.sinwaveEditor.points.length);
+        this.m += 1;
+    }
+
     create() {
+        this.m = 0;
+
         const sinwaveProps = {
             waveLength: this.game.height,
             sinAmp: 100,
