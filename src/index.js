@@ -1,3 +1,5 @@
+import Phaser from 'phaser-ce';
+
 import Main from './state_main';
 
 

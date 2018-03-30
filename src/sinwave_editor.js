@@ -1,3 +1,6 @@
+/** Generates a sine wave using Phaser's built-in sinCosGenerator function.
+ * The sine wave can then be drawn and edited.
+ */
 export default class SinwaveEditor {
     constructor(game, properties) {
         this.game = game;

@@ -1,3 +1,5 @@
+import Phaser from 'phaser-ce';
+
 import SinwaveEditor from './sinwave_editor';
 
 
