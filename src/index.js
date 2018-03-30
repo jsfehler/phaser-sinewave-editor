@@ -2,11 +2,19 @@ import Main from './state_main';
 
 
 class Game extends Phaser.Game {
-    constructor() {
-        super(384, 216, Phaser.AUTO, 'content', null);
+    constructor(config) {
+        super(config);
         this.state.add('Main', Main, false);
         this.state.start('Main');
     }
 }
 
-new Game(); // eslint-disable-line no-new
+const baseConfig = {
+    width: 384,
+    height: 216,
+    renderer: Phaser.AUTO,
+    parent: 'content',
+    state: null,
+};
+
+new Game(baseConfig); // eslint-disable-line no-new
